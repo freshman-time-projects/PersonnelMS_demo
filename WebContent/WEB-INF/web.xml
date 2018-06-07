@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+<servlet>
+	<servlet-name>ShowTest</servlet-name>
+	<servlet-class>com.zzupms.test.ShowAllTest</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ShowTest</servlet-name>
+	<url-pattern>/show</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>ShowSalary</servlet-name>
+	<servlet-class>com.zzupms.action.ShowSalary</servlet-class>
+</servlet>
+<servlet-mapping> 
+	<servlet-name>ShowSalary</servlet-name>
+	<url-pattern>/showsalary</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>BonusTest</servlet-name>
+	<servlet-class>com.zzupms.test.BonusTest</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>BonusTest</servlet-name>
+	<url-pattern>/bonus</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>FineTest</servlet-name>
+	<servlet-class>com.zzupms.test.FineTest</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>FineTest</servlet-name>
+	<url-pattern>/fine</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>RegisterTest</servlet-name>
+	<servlet-class>com.zzupms.test.RegisterTest</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>RegisterTest</servlet-name>
+	<url-pattern>/register</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>LoginTest</servlet-name>
+	<servlet-class>com.zzupms.test.LoginTest</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>LoginTest</servlet-name>
+	<url-pattern>/login</url-pattern>
+</servlet-mapping>
+	
+<servlet>
+		<servlet-name>AddTest</servlet-name>
+		<servlet-class>com.zzupms.test.AddTest</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>AddTest</servlet-name>
+	<url-pattern>/add</url-pattern>
+</servlet-mapping>	
+		
+<servlet>
+		<servlet-name>ShowByIdTest</servlet-name>
+		<servlet-class>com.zzupms.test.ShowById</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ShowByIdTest</servlet-name>
+	<url-pattern>/showbyid</url-pattern>
+</servlet-mapping>	
+
+<servlet>
+		<servlet-name>SearchPerson</servlet-name>
+		<servlet-class>com.zzupms.test.SearchPerson</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>SearchPerson</servlet-name>
+	<url-pattern>/search</url-pattern>
+</servlet-mapping>	
+
+<servlet>
+		<servlet-name>PersonAction</servlet-name>
+		<servlet-class>com.zzupms.action.PersonAction</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>PersonAction</servlet-name>
+	<url-pattern>/personmethod</url-pattern>
+</servlet-mapping>	
+
+<servlet>
+		<servlet-name>SalaryMethod</servlet-name>
+		<servlet-class>com.zzupms.action.SalaryMethod</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>SalaryMethod</servlet-name>
+	<url-pattern>/salarymethod</url-pattern>
+</servlet-mapping>	
+	
+<servlet>
+		<servlet-name>RecruitAction</servlet-name>
+		<servlet-class>com.zzupms.action.RecruitAction</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>RecruitAction</servlet-name>
+	<url-pattern>/recruitmethod</url-pattern>
+</servlet-mapping>	
+		
+			
+<servlet>
+		<servlet-name>FaceAction</servlet-name>
+		<servlet-class>com.zzupms.action.FaceAction</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>FaceAction</servlet-name>
+	<url-pattern>/facemethod</url-pattern>
+</servlet-mapping>	
+
+
+
+<servlet>
+		<servlet-name>UserAction</servlet-name>
+		<servlet-class>com.zzupms.action.UserAction</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>UserAction</servlet-name>
+	<url-pattern>/usermethod</url-pattern>
+</servlet-mapping>	
+		
+  <display-name></display-name>	
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

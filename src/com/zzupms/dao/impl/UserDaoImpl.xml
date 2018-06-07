@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zzupms.dao.UserDao">
+	<insert id="addUser" parameterType="com.zzupms.dao.UserDao">
+		insert into user(id,username,password,qq)values(#{id},#{username},#{password},#{qq})
+	</insert>
+	<select id="queryUser" parameterType="java.lang.String" resultType="com.zzupms.entity.User">
+		select username,password from user where username = #{username}
+	</select>
+	<select id="queryAll" resultType="com.zzupms.entity.User">
+		select username,password from user 
+	</select>
+	<update id="removeUser" parameterType="com.zzupms.entity.User" >
+		delete from user where username = #{username}
+	</update>
+	<update id="modifyUser" parameterType="com.zzupms.entity.User" >
+		update user set password = #{password} where username = #{username}
+	</update>
+</mapper>

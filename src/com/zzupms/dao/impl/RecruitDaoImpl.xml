@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zzupms.dao.RecruitDao">
+	<insert id="insertRecruit" parameterType="com.zzupms.entity.Recruit">
+		insert into recruit(name,sex,edu,school,cv)values(#{name},#{sex},#{edu},#{school},#{cv})
+	</insert>
+	<select id="queryAllRecruit" resultType="com.zzupms.entity.Recruit">
+		select id,name,sex,edu,school,cv from recruit
+	</select>
+	<select id="queryRecruitById" parameterType="com.zzupms.entity.Recruit" resultType="com.zzupms.entity.Recruit">
+		select id,name,sex,edu,school,cv from recruit where id = #{id}
+	</select>
+	<update id="delete" parameterType="com.zzupms.entity.Face">
+		delete from recruit
+			where id=#{id}
+	</update>
+	<update id="gotoFace" parameterType="com.zzupms.entity.Face">
+		update recruit
+			set pass = 1
+			where id=#{id}
+	</update>
+</mapper>

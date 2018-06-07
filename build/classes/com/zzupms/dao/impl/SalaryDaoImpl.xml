@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zzupms.dao.SalaryDao">
+	<insert id="insertSalary" parameterType="com.zzupms.entity.Salary">
+		insert into Salary(name,salary,bonus,fine) values (#{name},#{salary},#{bonus},#{fine})
+	</insert>
+	<select id="queryAllSalarys" resultType="com.zzupms.entity.Salary">
+		select id,name,salary,bonus,fine,level from Salary
+	</select>
+	<select id="queryAllSalarysBySalaryDesc" resultType="com.zzupms.entity.Salary">
+		select id,name,salary,bonus,fine,level from Salary order by salary desc
+	</select>
+	<select id="queryAllSalarysByBonusDesc" resultType="com.zzupms.entity.Salary">
+		select id,name,salary,bonus,fine,level from Salary order by bonus desc
+	</select>
+	<select id="queryAllSalarysByFineDesc" resultType="com.zzupms.entity.Salary">
+		select id,name,salary,bonus,fine,level from Salary order by fine desc
+	</select>
+	<select id="queryAllSalarysByFinalDesc" resultType="com.zzupms.entity.Salary">
+		select id,name,salary,bonus,fine,level from Salary order by salary desc
+	</select>
+	<update id="updateBonus" parameterType="com.zzupms.entity.Salary">
+		update Salary
+			set bonus=#{bonus}+300
+			where id=#{id}
+	</update>
+	
+	<update id="updateFine" parameterType="com.zzupms.entity.Salary">
+		update Salary
+			set fine=#{fine}+300
+			where id=#{id}
+	</update>
+	<update id="uplevel" parameterType="com.zzupms.entity.Salary">
+		update Salary
+			set level = #{level}+1,salary = #{salary}+#{salary}/2
+			where id=#{id}
+	</update>
+	<update id="removeSalary" parameterType="com.zzupms.entity.Salary">
+		delete from Salary where id = #{id}
+	</update>
+	
+	
+</mapper>

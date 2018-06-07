@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zzupms.dao.PersonDao">
+	<insert id="insertPerson" parameterType="com.zzupms.entity.Person">
+		insert into Person(name,age,sex,married,idcard,edu,school,mobile,address,email,org)values(#{name},#{age},#{sex},#{married},#{idcard},#{edu},#{school},#{mobile},#{address},#{email},#{org})
+	</insert>
+	<select id="queryAllPersons" resultType="com.zzupms.entity.Person">
+		select id,name,age,sex,married,idcard,edu,school,mobile,address,email,org from Person
+	</select>
+	<select id="queryPersonsById" parameterType="com.zzupms.entity.Person" resultType="com.zzupms.entity.Person">
+		select id,name,age,sex,married,idcard,edu,school,mobile,address,email from Person where id = #{id}
+	</select>
+	<update id="updatePerson" parameterType="com.zzupms.entity.Person" >
+		update Person set name = #{name},age = #{age},sex = #{sex}, married = #{married},idcard = #{idcard}, edu = #{edu},school = #{school},mobile = #{mobile},address = #{address}, email = #{email} where id = #{id}
+	</update>
+		<update id="removePerson" parameterType="com.zzupms.entity.Person">
+		delete from Person where id = #{id}
+	</update>
+	<select id="searchPerson" parameterType="String" resultType="com.zzupms.entity.Person">
+		select id,name,age,sex,married,idcard,edu,school,mobile,address,email,org from Person where 
+		name like  "%" #{name} "%" 
+		or idcard like  "%" #{name} "%" 
+		or edu like  "%" #{name} "%" 
+		or school like  "%" #{name} "%" 
+		or mobile like  "%" #{name} "%" 
+		or address like  "%" #{name} "%" 
+		or email like  "%" #{name} "%" 
+		or org like  "%" #{name} "%" 
+	</select>
+</mapper>
